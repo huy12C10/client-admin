@@ -1,0 +1,37 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center;
+    height: 228px;
+    width: 1526px;
+  }
+  
+  .contact-list {
+    flex: 1; 
+    text-align: left; 
+    margin-left:auto
+   
+  }
+  
+  .contact-list.contact-address {
+    text-align: left; 
+  }
+  
+  .email-contact {
+    text-align: center; 
+  }
+  
+  .contact-list:last-child {
+    text-align: right; 
+  }
+i{
+    margin-right: 10px;
+}
+.dienthoai{
+   
+    margin-right: 160px;
+}

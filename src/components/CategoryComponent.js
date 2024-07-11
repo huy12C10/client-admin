@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap';
 import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import '../assets/SCSS//CategoryComponent.scss'; // Import SCSS for Category
 import MyContext from '../contexts/MyContext';
 import CategoryDetail from './CategoryDetailComponent'; // Ensure correct path
 import FooterComponent from './FooterComponent'; // Ensure correct import
@@ -85,10 +86,8 @@ class Category extends Component {
     ));
 
     return (
-      <div>
-        <div className="page-container">
-        <div className="main-content">
-        <div className="float-left">
+      <div className="category-container">
+        <div className="table-container">
           <Table className="table table-bordered">
             <thead className="thead-dark">
               <tr>
@@ -100,22 +99,18 @@ class Category extends Component {
               {cates}
             </tbody>
           </Table>
-        </div>
 
-        <Modal isOpen={isOpenModal} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>{itemSelected ? 'Edit Category' : 'Add New Category'}</ModalHeader>
-          <ModalBody>
-            <CategoryDetail item={itemSelected} updateCategories={this.updateCategories} />
-          </ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
-      
-        {/* Ensure FooterComponent is properly imported and used */}
+          <Modal isOpen={isOpenModal} toggle={this.toggleModal}>
+            <ModalHeader toggle={this.toggleModal}>{itemSelected ? 'Edit Category' : 'Add New Category'}</ModalHeader>
+            <ModalBody>
+              <CategoryDetail item={itemSelected} updateCategories={this.updateCategories} />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
+            </ModalFooter>
+          </Modal>
+        </div>
         <FooterComponent />
-      </div>
-      </div>
       </div>
     );
   }

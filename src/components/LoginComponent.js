@@ -1,10 +1,10 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import '../assets/SCSS/Login.scss';
 import MyContext from '../contexts/MyContext';
-
 class Login extends Component {
   static contextType = MyContext; // using this.context to access global state
 
